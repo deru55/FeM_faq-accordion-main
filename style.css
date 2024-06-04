@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --ff-default: "Work Sans", sans-serif;
+
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --clr-primary-1: hsl(0, 0%, 100%);
+  --clr-primary-2: hsl(275, 100%, 97%);
+  --clr-primary-3: hsl(292, 16%, 49%);
+  --clr-primary-4: hsl(292, 42%, 14%);
+
+  --padding: 1.5rem;
+}
+
+/* utilities classes */
+.flow > * + * {
+  margin-top: var(--flow-spacer, 1.75rem);
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: var(--ff-default);
+  font-weight: var(--fw-400);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-primary-2);
+  background-image: url(assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card {
+  max-width: 37.5rem;
+  background-color: var(--clr-primary-1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-inline: 1.5rem;
+}
+
+.icon-star {
+  width: max(1.5rem, 3vw);
+}
+
+.card__title {
+  font-size: 2rem;
+  font-weight: var(--fw-700);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card__content > * + * {
+  border-top: 1px solid var(--clr-primary-2);
+}
+
+.card__content__q-a_block {
+  padding-block: var(--padding);
+}
+
+.question {
+  font-size: 1rem;
+  font-weight: var(--fw-700);
+}
+
+.question:where(:hover, :focus) {
+  cursor: pointer;
+  color: hsl(300, 100%, 35%);
+}
+
+.answer {
+  color: var(--clr-primary-3);
+  padding-top: var(--padding);
+}
+
+.expand-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-image: url(assets/images/icon-plus.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 2rem;
+  aspect-ratio: 1;
+}
+
+.expand-btn.expanded {
+  background-image: url(assets/images/icon-minus.svg);
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    font-size: 1rem;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    line-height: 1.6;
+  }
+
+  .card {
+    padding: 1.5rem 2.75rem;
+  }
+
+  .card__title {
+    font-size: 3.5rem;
+  }
+}
