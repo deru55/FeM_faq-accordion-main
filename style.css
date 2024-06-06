@@ -42,10 +42,6 @@ svg {
   gap: 2rem;
 }
 
-.hidden {
-  display: none;
-}
-
 body {
   font-family: var(--ff-default);
   font-weight: var(--fw-400);
@@ -101,6 +97,9 @@ body {
 .answer {
   color: var(--clr-primary-3);
   padding-top: var(--padding);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
 }
 
 .expand-btn {

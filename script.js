@@ -5,7 +5,12 @@ const expandBtn = document.querySelectorAll(".expand-btn");
 const myFunction = (item, index) => {
   item.addEventListener("click", () => {
     expandBtn[index].classList.toggle("expanded");
-    answers[index].classList.toggle("hidden");
+
+    if (answers[index].style.maxHeight) {
+      answers[index].style.maxHeight = null;
+    } else {
+      answers[index].style.maxHeight = answers[index].scrollHeight + "px";
+    }
   });
 };
 
