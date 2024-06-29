@@ -42,6 +42,10 @@ svg {
   gap: 2rem;
 }
 
+.padding-block {
+  padding-block: var(--padding);
+}
+
 body {
   font-family: var(--ff-default);
   font-weight: var(--fw-400);
@@ -80,10 +84,6 @@ body {
   border-top: 1px solid var(--clr-primary-2);
 }
 
-.card__content__q-a_block {
-  padding-block: var(--padding);
-}
-
 .question {
   font-size: 1rem;
   font-weight: var(--fw-700);
@@ -96,10 +96,13 @@ body {
 
 .answer {
   color: var(--clr-primary-3);
-  padding-top: var(--padding);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s ease-out;
+}
+
+.answer > p {
+  padding-bottom: var(--padding);
 }
 
 .expand-btn {
